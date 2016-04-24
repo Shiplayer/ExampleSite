@@ -24,3 +24,7 @@ div.header div.menu{
     background-color: aqua;
     width: 100%;
 }
+
+div.header_block:focus{
+    background-color: blue;
+}
