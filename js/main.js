@@ -5,9 +5,6 @@
 var focus = null;
 
 function setOnClick(node){
-    console.log(node);
-    console.log("node ", node.children, " with tagName is ", node.tagName);
-    console.log(node.length);
     for (var i = 0; i < node.childElementCount; i++) {
         console.log("i = ", i);
         if (node.children[i].childElementCount > 0)
@@ -31,16 +28,21 @@ window.onload = function(){
 
     setOnClick(body[0]);
 
-    setInterval(function() {
-        var content = document.getElementsByClassName("content");
+    //setInterval(function() {
+    //}, 1000);
+
+    document.onclick = function(){
+        var content = document.getElementsByClassName("content")[0];
         if (focus != null) {
-            console.log("focus is ", focus.className);
             content.innerHTML = focus.className;
+            console.log("focus is ", focus.className);
+
         } else {
             console.log("focus is null");
         }
-    }, 1000)
+    }
 };
+
 /*document.onload = function(){
     console.log("test");
 
